@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liora's World — Arunika</title>
+    <!-- Google Fonts untuk font estetik bergaya Ruang Arum -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* CSS UNTUK MENGATUR TAMPILAN WEB (Bisa kamu edit warnanya nanti) */
+        :root {
+            --bg-color: #f7f5f0;       /* Warna latar belakang cream lembut */
+            --card-color: #ffffff;     /* Warna kotak konten putih bersih */
+            --accent-color: #8da499;   /* Warna hijau sage estetik (Sage Green) */
+            --text-dark: #333d37;      /* Warna teks utama abu-abu gelap */
+            --text-muted: #707a74;     /* Warna teks sekunder */
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* Container Utama */
+        .wrapper {
+            background-color: var(--card-color);
+            width: 100%;
+            max-width: 450px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.05);
+            padding: 30px;
+            text-align: center;
+        }
+
+        /* Foto Profil Liora */
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border: 3px solid var(--accent-color);
+            padding: 5px;
+        }
+
+        /* Tipografi Nama */
+        h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.8rem;
+            letter-spacing: 2px;
+            color: var(--text-dark);
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--accent-color);
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+
+        /* Menu Tombol Interaktif */
+        .nav-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            background: none;
+            border: 1px solid #e2e8f0;
+            padding: 12px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 0.85rem;
+            color: var(--text-dark);
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover, .btn.active {
+            background-color: var(--accent-color);
+            color: white;
+            border-color: var(--accent-color);
+        }
+
+        /* Pembatas Horizontal */
+        hr {
+            border: 0;
+            height: 1px;
+            background: #e2e8f0;
+            margin: 20px 0;
+        }
+
+        /* Bagian Konten yang bisa berubah-ubah */
+        .content-section {
+            display: none; /* Sembunyikan semua section di awal */
+            animation: fadeIn 0.5s ease forwards;
+            min-height: 150px;
+            text-align: left;
+            line-height: 1.6;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .content-section.active {
+            display: block; /* Hanya tampilkan section yang aktif */
+        }
+
+        /* Kutipan Puitis (Quotes) */
+        .quotes-box {
+            font-style: italic;
+            border-left: 2px solid var(--accent-color);
+            padding-left: 15px;
+            margin: 15px 0;
+            color: var(--text-dark);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <!-- GANTI LINK DI BAWAH INI DENGAN DIRECT LINK FOTO LIORA KAMU -->
+        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=500" alt="Liora" class="profile-img">
+        
+        <h1>LIORA</h1>
+        <div class="subtitle">The Golden Dawn</div>
+
+        <!-- Tombol Navigasi Menu -->
+        <div class="nav-buttons">
+            <button class="btn active" onclick="bukaSection('kenali')">Kenali Liora</button>
+            <button class="btn" onclick="bukaSection('tentang')">Tentang Dia</button>
+            <button class="btn" onclick="bukaSection('quotes')">Arunika</button>
+            <button class="btn" onclick="bukaSection('hubungan')">Log File</button>
+        </div>
+
+        <hr>
+
+        <!-- KONTEN TAB 1: KENALI LIORA -->
+        <div id="kenali" class="content-section active">
+            <p>Selamat datang di ruang sunyi milik Liora. Lembaran ini dibuka khusus untuk merajut kembali potongan kisah yang sempat berserakan di bawah langit malam.</p>
+            <br>
+            <p><b>Nama Lengkap:</b> Liora Arunika<br>
+            <b>Vibe:</b> Champagne Gold, aroma kertas tua, dan ketenangan fajar.</p>
+        </div>
+
+        <!-- KONTEN TAB 2: TENTANG DIA -->
+        <div id="tentang" class="content-section">
+            <p>Liora adalah personifikasi dari ketangguhan yang tenang. Dia tidak banyak bicara, namun kehadirannya seperti kehangatan matahari pagi yang menyelinap pelan di balik tirai kamarmu.</p>
+        </div>
+
+        <!-- KONTEN TAB 3: QUOTES ARUNIKA -->
+        <div id="quotes" class="content-section">
+            <div class="quotes-box">
+                "The dawn never promises that the night will be gone forever; it simply proves that even the deepest darkness must eventually yield to the light."
+            </div>
+            <p>— Sebuah pengingat kecil bahwa badai sedahsyat apa pun di malam hari, akan selalu kalah oleh rengkuhan fajar yang tenang.</p>
+        </div>
+
+        <!-- KONTEN TAB 4: HUBUNGAN / LOG FILE -->
+        <div id="hubungan" class="content-section">
+            <p><b>[ ARSIP JALUR HUBUNGAN ]</b></p>
+            <p>• <b>Maura:</b> Jangkar logika di kala emosi sedang meronta melampaui batas aman.</p>
+            <p>• <b>Marcel:</b> Potongan teka-teki rumit yang belum sempat selesai dibaca.</p>
+        </div>
+
+    </div>
+
+    <!-- JAVASCRIPT UNTUK EFEK KLIK PINDAH HALAMAN (TABS) -->
+    <script>
+        function bukaSection(sectionId) {
+            // Sembunyikan semua bagian konten
+            const semuaSection = document.querySelectorAll('.content-section');
+            semuaSection.forEach(section => section.classList.remove('active'));
+
+            // Matikan status aktif di semua tombol
+            const semuaTombol = document.querySelectorAll('.btn');
+            semuombol = tombol => tombol.classList.remove('active');
+            semuaTombol.forEach(btn => btn.classList.remove('active'));
+
+            // Tampilkan bagian konten yang dipilih
+            document.getElementById(sectionId).classList.add('active');
+
+            // Aktifkan tombol yang sedang diklik
+            event.currentTarget.classList.add('active');
+        }
+    </script>
+</body>
+</html>
